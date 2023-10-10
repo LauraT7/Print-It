@@ -22,8 +22,7 @@ const arrowLeft = document.querySelector('.arrow_left')
 const arrowRight = document.querySelector('.arrow_right')
 let currentIndex = 0
 
-const carrouselImage = document.querySelector('.carrousel_image'); 
-
+const carrouselImage = document.querySelector('.carrousel_image');
 arrowLeft.addEventListener('click', function () {
   currentIndex--;
   if (currentIndex < 0) {
@@ -61,3 +60,4 @@ arrowRight.addEventListener('click', function () {
   );
   currentDot.classList.add('dot_selected');
 });
+
