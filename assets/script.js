@@ -22,45 +22,42 @@ const arrowLeft = document.querySelector('.arrow_left')
 const arrowRight = document.querySelector('.arrow_right')
 let currentIndex = 0
 
+const carrouselImage = document.querySelector('.carrousel_image'); 
+
 arrowLeft.addEventListener('click', function () {
-  currentIndex--
- 
+  currentIndex--;
   if (currentIndex < 0) {
-    currentIndex = slides.length 
-    - 1
+    currentIndex = slides.length - 1;
   }
- 
-  carrouselImage.src = slides[currentIndex].image
+  carrouselImage.src = slides[currentIndex].image;
 
-  const tagLine = document.querySelector('#tag_line')
-  tagLine.innerHTML = slides[currentIndex].tagLine
+  const tagLine = document.querySelector('#tag_line');
+  tagLine.innerHTML = slides[currentIndex].tagLine;
 
-  const allDots = document.querySelectorAll('.dot')
-  allDots.forEach(dot => dot.classList.remove('dot_selected'))
+  const allDots = document.querySelectorAll('.dot');
+  allDots.forEach(dot => dot.classList.remove('dot_selected'));
 
   const currentDot = document.querySelector(
     `.dot:nth-child(${currentIndex + 1})`
-  )
-  currentDot.classList.add('dot_selected')
-
-})
-
-//-----------------------------------------------
+  );
+  currentDot.classList.add('dot_selected');
+});
 
 arrowRight.addEventListener('click', function () {
-  currentIndex++
+  currentIndex++;
   if (currentIndex >= slides.length) {
-    currentIndex = 0
+    currentIndex = 0;
   }
-  const carrouselImage = document.querySelector('.carrousel_image')
-  carrouselImage.src = slides[currentIndex].image
+  carrouselImage.src = slides[currentIndex].image;
 
-  const tagLine = document.querySelector('#tag_line')
-  tagLine.innerHTML = slides[currentIndex].tagLine
-  const allDots = document.querySelectorAll('.dot')
-  allDots.forEach(dot => dot.classList.remove('dot_selected'))
+  const tagLine = document.querySelector('#tag_line');
+  tagLine.innerHTML = slides[currentIndex].tagLine;
+
+  const allDots = document.querySelectorAll('.dot');
+  allDots.forEach(dot => dot.classList.remove('dot_selected'));
+
   const currentDot = document.querySelector(
     `.dot:nth-child(${currentIndex + 1})`
-  )
-  currentDot.classList.add('dot_selected')
-})
+  );
+  currentDot.classList.add('dot_selected');
+});
